@@ -66,7 +66,7 @@ const habits = [
 ];
 
 const MyHabits = () => {
-  // const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <div className="flex min-h-screen bg-white">

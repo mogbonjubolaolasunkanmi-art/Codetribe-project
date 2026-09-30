@@ -1,6 +1,4 @@
 import { useState } from "react";
-import Sidebar from "../../components/Sidebar";
-import Header from "../../components/Header";
 import "./MyHabits.css";
 import codetribe from "../../assets/codetribe-logo.jpg";
 import {
@@ -66,14 +64,61 @@ const habits = [
 ];
 
 const MyHabits = () => {
-  // const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen bg-white">
-      <Sidebar />
-      <main className="flex-1">
-        <Header />
-        <div className="p-8">
+    <div className="container">
+      <div className={`sidebar ${sidebarOpen ? "sidebar-open" : ""}`}>
+        <div className="logo">
+          <img src={codetribe} alt="logo" />
+        </div>
+        <nav className="sidebar-nav">
+          <div className="nav-items">
+            <House />
+            <p> Dashboard</p>
+          </div>
+          <div className="nav-items">
+            <SquareMenu />
+            <p> My Habits</p>
+          </div>
+          <div className="nav-items">
+            <CalendarDays />
+            <p> Calendar</p>
+          </div>
+          <div className="nav-items">
+            <ChartNoAxesColumnIncreasing />
+            <p> Progress</p>
+          </div>
+          <div className="nav-items">
+            <Settings />
+            <p> Settings</p>
+          </div>
+        </nav>
+        <div className="help">
+          <span>ⓘ</span>
+          Help & Support
+        </div>
+      </div>
+      <main className="main-content">
+        {/* <button
+          className="hamburger"
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+        >
+          ☰
+        </button> */}
+        <header className="top-header">
+          <div className="header-spacer"></div>
+          <div className="header-right">
+            <Bell />
+            <div className="profile">
+              <CircleUser />
+              <span className="profile-name">Alex Johnson</span>
+
+              <ChevronDown />
+            </div>
+          </div>
+        </header>
+        <section className="habits-section">
           <div className="page-heading">
             <h1>My Habits</h1>
             <button className="add-habit-btn">
@@ -111,7 +156,7 @@ const MyHabits = () => {
               </div>
             ))}
           </div>
-        </div>
+        </section>
       </main>
     </div>
   );

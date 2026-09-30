@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/codetribe-logo.jpg";
+import logo from "../assets/CodeTribe-logo.jpg";
 
 function Sidebar() {
   return (
@@ -19,16 +19,14 @@ function Sidebar() {
       {/* Navigation */}
       <nav className="space-y-3">
         <div className="rounded-xl bg-emerald-50 px-4 py-3 font-semibold text-emerald-600">
-          <Link to="/">🏠 Dashboards</Link>
+          <Link to="/">🏠 Dashboard</Link>
         </div>
 
         <div className="px-4 py-3 text-gray-600">
           <Link to="/MyHabits"> ☷ My Habits</Link>
         </div>
 
-        <div className="px-4 py-3 text-gray-600">
-          <Link to="/calender">📅 Calendengitr</Link>
-        </div>
+        <div className="px-4 py-3 text-gray-600">📅 Calendar</div>
 
         <div className="px-4 py-3 text-gray-600">
           <Link to="/progress">📊 Progress</Link>

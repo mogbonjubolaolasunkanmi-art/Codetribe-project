@@ -1,29 +1,33 @@
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Sidebar from "./components/Sidebar"; // Ready to go
-// import Header from "./components/Header";   // Ready to go
+// import Sidebar from "./components/Sidebar";
+// import Header from "./components/Header";
 
 import Dashboard from "./pages/Dashboard";
 import Progress from "./pages/progress";
 import MyHabits from "./pages/myhabits/MyHabits";
 import SignUp from "./pages/signup/SignUp";
 import Login from "./pages/login/Login";
-import Calender from "./pages/Calender";
+import Onboarding from './Onboarding'
+import HabitDetails from './Calender'
 
 function App() {
   return (
     <Router>
       <div className="flex min-h-screen bg-white">
-        {/* <Sidebar /> Persists on the left side */}
+        {/* <Sidebar /> */}
         <main className="flex-1">
-          {/* <Header /> Persists at the top right */}
+          {/* <Header /> */}
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/progress" element={<Progress />} />
-    
-            <Route path="/myhabits" element={<MyHabits />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/calender" element={<Calender />} />
+            <Route path="/MyHabits" element={<MyHabits />} />
+            <Route path="/SignUp" element={<SignUp />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/Onboarding" element={<Onboarding />} />
+            <Route path="/HabitDetails" element={<HabitDetails />} />
+
+            {/* Add matching components for /habits, /calendar, /settings here as you build them out */}
           </Routes>
         </main>
       </div>
@@ -32,3 +36,4 @@ function App() {
 }
 
 export default App;
+
