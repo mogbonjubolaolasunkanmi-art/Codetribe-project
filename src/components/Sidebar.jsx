@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/CodeTribe-logo.jpg";
+import logo from "../assets/codetribe-logo.jpg";
 
 function Sidebar() {
   return (
