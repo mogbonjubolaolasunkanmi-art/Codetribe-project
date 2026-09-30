@@ -26,9 +26,7 @@ function Sidebar() {
           <Link to="/MyHabits"> ☷ My Habits</Link>
         </div>
 
-        <div className="px-4 py-3 text-gray-600">
-          <Link to="/calender">📅 Calendengitr</Link>
-        </div>
+        <div className="px-4 py-3 text-gray-600">📅 Calendar</div>
 
         <div className="px-4 py-3 text-gray-600">
           <Link to="/progress">📊 Progress</Link>
