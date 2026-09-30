@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Sidebar from "../../components/Sidebar";
+import Header from "../../components/Header";
 import "./MyHabits.css";
 import codetribe from "../../assets/codetribe-logo.jpg";
 import {
@@ -67,54 +69,50 @@ const MyHabits = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="">
-      {/* <main className="main-content"> */}
-      {/* <button
-          className="hamburger"
-          onClick={() => setSidebarOpen(!sidebarOpen)}
-        >
-          ☰
-        </button> */}
-      <div className="p-8">
-        <div className="page-heading">
-          <h1>My Habits</h1>
-          <button className="add-habit-btn">
-            <span>＋</span>
-            Add habit
-          </button>
-        </div>
-        <div className="p-text">
-          <p> Manage and organize all your habits.</p>
-        </div>
-        <div className="tabs">
-          <button className="tab-one">
-            Active Habits <span>(6)</span>
-          </button>
-          <button className="tab">
-            Archived <span>(2)</span>
-          </button>
-        </div>
-        <div className="habit-list">
-          {habits.map((habit, index) => (
-            <div className="habit-card" key={index}>
-              <div className={`habit-icon ${habit.iconClass}`}>
-                {habit.icon}
+    <div className="flex min-h-screen bg-white">
+      <Sidebar />
+      <main className="flex-1">
+        <Header />
+        <div className="p-8">
+          <div className="page-heading">
+            <h1>My Habits</h1>
+            <button className="add-habit-btn">
+              <span>＋</span>
+              Add habit
+            </button>
+          </div>
+          <div className="p-text">
+            <p> Manage and organize all your habits.</p>
+          </div>
+          <div className="tabs">
+            <button className="tab-one">
+              Active Habits <span>(6)</span>
+            </button>
+            <button className="tab">
+              Archived <span>(2)</span>
+            </button>
+          </div>
+          <div className="habit-list">
+            {habits.map((habit, index) => (
+              <div className="habit-card" key={index}>
+                <div className={`habit-icon ${habit.iconClass}`}>
+                  {habit.icon}
+                </div>
+                <div className="habit-info">
+                  <h3>{habit.name}</h3>
+                  <p>{habit.frequency}</p>
+                </div>
+                <div className={`streak ${habit.streakClass}`}>
+                  {habit.streak}
+                </div>
+                <button className="habit-arrow">
+                  <ChevronRight />
+                </button>
               </div>
-              <div className="habit-info">
-                <h3>{habit.name}</h3>
-                <p>{habit.frequency}</p>
-              </div>
-              <div className={`streak ${habit.streakClass}`}>
-                {habit.streak}
-              </div>
-              <button className="habit-arrow">
-                <ChevronRight />
-              </button>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-      {/* </main> */}
+      </main>
     </div>
   );
 };
