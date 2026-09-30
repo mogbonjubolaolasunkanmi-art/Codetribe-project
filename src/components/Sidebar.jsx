@@ -19,7 +19,7 @@ function Sidebar() {
       {/* Navigation */}
       <nav className="space-y-3">
         <div className="rounded-xl bg-emerald-50 px-4 py-3 font-semibold text-emerald-600">
-          <Link to="/">🏠 Dashboard</Link>
+          <Link to="/">🏠 Dashboards</Link>
         </div>
 
         <div className="px-4 py-3 text-gray-600">
