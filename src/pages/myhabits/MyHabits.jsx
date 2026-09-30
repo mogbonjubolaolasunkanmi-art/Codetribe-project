@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Sidebar from "../../components/Sidebar";
+import Header from "../../components/Header";
 import "./MyHabits.css";
 import codetribe from "../../assets/codetribe-logo.jpg";
 import {
@@ -67,15 +69,11 @@ const MyHabits = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="container">
-      <main className="main-content">
-        {/* <button
-          className="hamburger"
-          onClick={() => setSidebarOpen(!sidebarOpen)}
-        >
-          ☰
-        </button> */}
-        <section className="habits-section">
+    <div className="flex min-h-screen bg-white">
+      <Sidebar />
+      <main className="flex-1">
+        <Header />
+        <div className="p-8">
           <div className="page-heading">
             <h1>My Habits</h1>
             <button className="add-habit-btn">
@@ -113,7 +111,7 @@ const MyHabits = () => {
               </div>
             ))}
           </div>
-        </section>
+        </div>
       </main>
     </div>
   );

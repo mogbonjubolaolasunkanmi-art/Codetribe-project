@@ -1,27 +1,32 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import Sidebar from "./components/Sidebar";
+// import Header from "./components/Header";
+
+import Dashboard from "./pages/Dashboard";
+import Progress from "./pages/progress";
+import MyHabits from "./pages/myhabits/MyHabits";
 import SignUp from "./pages/signup/SignUp";
 import Login from "./pages/login/Login";
-import MyHabits from "./pages/myhabits/MyHabits";
-import { Sidebar } from "lucide-react";
 
-const App = () => {
+function App() {
   return (
     <Router>
       <div className="flex min-h-screen bg-white">
-        <Sidebar />
+        {/* <Sidebar /> */}
         <main className="flex-1">
           {/* <Header /> */}
           <Routes>
-            <Route path="/" element={<MyHabits />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/progress" element={<Progress />} />
+            <Route path="/MyHabits" element={<MyHabits />} />
+            <Route path="/SignUp" element={<SignUp />} />
+            <Route path="/Login" element={<Login />} />
+            {/* Add matching components for /habits, /calendar, /settings here as you build them out */}
           </Routes>
         </main>
-        {/* <SignUp />
-      <Login />
-      */}
       </div>
     </Router>
   );
-};
+}
+
 export default App;
