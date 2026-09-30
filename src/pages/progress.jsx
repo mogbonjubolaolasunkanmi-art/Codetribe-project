@@ -5,6 +5,7 @@ import Header from "../components/Header";
 // import "./index.css";
 
 function Progress() {
+ 
   const [weeklyData, setWeeklyData] = useState([
     { day: "Mon", value: 55 },
     { day: "Tue", value: 65 },

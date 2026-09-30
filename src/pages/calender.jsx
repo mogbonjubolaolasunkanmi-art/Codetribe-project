@@ -1,6 +1,13 @@
-
+// import Sidebar from "../components/Sidebar";
+// import Header from "../components/Header";
 import { useState } from "react";
-import Codetribe from "./assets/Codetribe.jpg"
+
+import Sidebar from "../components/Sidebar";
+import Header from "../components/Header";
+import StatCard from "../components/StatCard";
+import HabitItem from "../components/HabitItem";
+import Motivation from "../components/Motivation";
+
 import {
   ArrowLeft,
   Bell,
@@ -14,37 +21,59 @@ import {
   Archive,
 } from "lucide-react";
 
-const HabitDetails = () => {
-  const [completed, setCompleted] = useState(false);
+const habits = [
+  {
+    icon: "💧",
+    title: "Drink 8 glasses of water",
+    time: "8:00 AM",
+    frequency: "Daily",
+    completed: true,
+  },
+  {
+    icon: "🏋️",
+    title: "Exercise for 20 minutes",
+    time: "7:00 AM",
+    frequency: "Mon, Wed, Fri",
+    completed: true,
+  },
+  {
+    icon: "📖",
+    title: "Read for 20 minutes",
+    time: "8:00 PM",
+    frequency: "Daily",
+    completed: false,
+  },
+  {
+    icon: "🧘",
+    title: "Meditate",
+    time: "7:00 AM",
+    frequency: "Daily",
+    completed: true,
+  },
+  {
+    icon: "🍴",
+    title: "Eat healthy meals",
+    time: "All day",
+    frequency: "Daily",
+    completed: true,
+  },
+  {
+    icon: "📝",
+    title: "Journal",
+    time: "9:00 PM",
+    frequency: "Daily",
+    completed: false,
+  },
+];
+
+function Dashboard() {
+     const [completed, setCompleted] = useState(false);
   return (
-    <div className="min-h-screen bg-[#f8faf9] px-3 py-4 sm:px-6">
-
-      {/* Main Container */}
-      <div className="mx-auto max-w-5xl overflow-hidden rounded-lg border border-gray-200 bg-white">
-
-        {/* ================= HEADER ================= */}
-        <header className="flex h-16 items-center justify-between border-b border-gray-100 px-5 sm:px-8">
-
-          {/* Logo */}
-          <div className="flex items-center gap-2 justify-center" >
-        
-             <img src={Codetribe} className="w-[100px] h-[60px]" alt="" />
-            
-
-            
-          </div>
-
-          {/* Right side */}
-          <div className="flex items-center gap-4">
-
-            <Bell className="h-4 w-4 text-gray-600" />
-
-          </div>
-        </header>
-
-
-        {/* ================= CONTENT ================= */}
-        <main className="px-5 py-6 sm:px-8">
+    <div className="flex min-h-screen bg-white">
+      <Sidebar />
+      <main className="flex-1">
+        <Header />
+        <div className="px-5 py-6 sm:px-8">
 
           {/* Back */}
           <button className="mb-7 flex items-center gap-2 text-sm font-medium text-gray-600">
@@ -392,10 +421,10 @@ const HabitDetails = () => {
 
           </div>
 
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
   );
-};
+}
 
-export default HabitDetails;
+export default Dashboard;

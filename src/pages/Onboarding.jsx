@@ -1,5 +1,5 @@
 
-import Codetribe from "./assets/Codetribe.jpg"
+// import Codetribe from "./assets/Codetribe.jpg"
 import {
   Heart,
   Dumbbell,
