@@ -67,54 +67,54 @@ const MyHabits = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="container">
-      <main className="main-content">
-        {/* <button
+    <div className="">
+      {/* <main className="main-content"> */}
+      {/* <button
           className="hamburger"
           onClick={() => setSidebarOpen(!sidebarOpen)}
         >
           ☰
         </button> */}
-        <section className="habits-section">
-          <div className="page-heading">
-            <h1>My Habits</h1>
-            <button className="add-habit-btn">
-              <span>＋</span>
-              Add habit
-            </button>
-          </div>
-          <div className="p-text">
-            <p> Manage and organize all your habits.</p>
-          </div>
-          <div className="tabs">
-            <button className="tab-one">
-              Active Habits <span>(6)</span>
-            </button>
-            <button className="tab">
-              Archived <span>(2)</span>
-            </button>
-          </div>
-          <div className="habit-list">
-            {habits.map((habit, index) => (
-              <div className="habit-card" key={index}>
-                <div className={`habit-icon ${habit.iconClass}`}>
-                  {habit.icon}
-                </div>
-                <div className="habit-info">
-                  <h3>{habit.name}</h3>
-                  <p>{habit.frequency}</p>
-                </div>
-                <div className={`streak ${habit.streakClass}`}>
-                  {habit.streak}
-                </div>
-                <button className="habit-arrow">
-                  <ChevronRight />
-                </button>
+      <div className="p-8">
+        <div className="page-heading">
+          <h1>My Habits</h1>
+          <button className="add-habit-btn">
+            <span>＋</span>
+            Add habit
+          </button>
+        </div>
+        <div className="p-text">
+          <p> Manage and organize all your habits.</p>
+        </div>
+        <div className="tabs">
+          <button className="tab-one">
+            Active Habits <span>(6)</span>
+          </button>
+          <button className="tab">
+            Archived <span>(2)</span>
+          </button>
+        </div>
+        <div className="habit-list">
+          {habits.map((habit, index) => (
+            <div className="habit-card" key={index}>
+              <div className={`habit-icon ${habit.iconClass}`}>
+                {habit.icon}
               </div>
-            ))}
-          </div>
-        </section>
-      </main>
+              <div className="habit-info">
+                <h3>{habit.name}</h3>
+                <p>{habit.frequency}</p>
+              </div>
+              <div className={`streak ${habit.streakClass}`}>
+                {habit.streak}
+              </div>
+              <button className="habit-arrow">
+                <ChevronRight />
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* </main> */}
     </div>
   );
 };
